@@ -25,7 +25,7 @@ const db = new sqlite3.Database('./suppliers.db', (err) => {
     }
 });
 
-
+//modify this to change where the files are downloaded from
 async function downloadCSVs() {
     const client = new ftp.Client();
     client.ftp.verbose = true;
@@ -271,7 +271,7 @@ async function convertCsvToJson2(filename, vendorName) {
                         },
                         "identification": {
                             "buyer": "Elite",
-                            "productCode": row['Case UPC'] || "0",
+                            "productCode": row['Product Number'] || "0",
                             "supplier": vendorName || "UNASSIGNED"
                         },
                         "container": {
@@ -282,18 +282,18 @@ async function convertCsvToJson2(filename, vendorName) {
                                 "number": "1"
                             },
                             "commodityGroup": {
-                                "name":  "Drinks", //row['Product Class'] ||
+                                "name": row['Product Class'],
                             },
                             "name": row['Product Description'],
-                            "prices": [
-                                {
-                                    "value": 1,
-                                    "validFrom": "2024-03-24T14:15:22Z",
-                                    "priceGroup": {
-                                        "number": "1"
-                                    },
-                                }
-                            ],
+                            // "prices": [
+                            //     {
+                            //         "value": 1,
+                            //         "validFrom": "2024-03-24T14:15:22Z",
+                            //         "priceGroup": {
+                            //             "number": "1"
+                            //         },
+                            //     }
+                            // ],
                             "codes": [
                                 {
                                     "productCode": row['Product Number'],
@@ -344,13 +344,14 @@ async function sendDataInfoToSecondApi(jsonData, stockReceiptId, assignExistingP
             'Content-Type': 'application/json'
         },
         params: {
-            assignExistingProduct: assignExistingProduct
+            assignExistingProduct: assignExistingProduct,
+            writeMode: "ADD_OR_UPDATE" // Ensure the operation will insert or update, overwriting all non-null fields
         }
     };
 
     for (let item of jsonData) {
         config.data = item; // Set the data for each individual item
-        console.log("&&&&&& * JSON OBECJT * &&&&&&&&&&& : ",item)
+        console.log("Sending Item with Config: ", JSON.stringify(config, null, 2)); // Display the config including data being sent
         try {
             const response = await axios(config);
             // Check if the response contains an array with a status of 'ERROR'
@@ -363,7 +364,6 @@ async function sendDataInfoToSecondApi(jsonData, stockReceiptId, assignExistingP
         }
     }
 }
-
 
 
 // async function createProductInSystem(item) {
