@@ -86,13 +86,19 @@ Adjust them to match your CSV columns, store number, etc.
 <br/>
 
 ★Usage★
+
 Edit .env with your FTP and KORONA API credentials.
+
 Run the script: node index.js
+
 The script downloads all new .csv files from your FTP folder (/OUT), processes them, and sends data to KORONA’s API.
+
 Once processed, filenames are appended to uploaded.txt to prevent duplicate processing.
 <br/>
 
 Check logs and uploaded.txt to confirm processed files.
+
 Check your KORONA account to ensure new dispatchNotifications (stock receipts) and supplier entries appear.
 <br/>
+
 Feel free to rename index.js or adjust the script to your liking—just keep the .env and code consistent. Enjoy your KORONA FTP CSV SYNC project!
