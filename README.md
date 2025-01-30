@@ -52,19 +52,33 @@ ORG_UNIT_TO_MATCH=3
 
 # (Optional) CSV Column Overrides
 VENDOR_NAME_KEY=Vendor Name
+
 PRODUCT_DESCRIPTION_KEY=Product Description
+
 UNIT_COST_KEY=Unit Cost
+
 PACKS_PER_CASE_KEY=Packs Per Case
+
 QUANTITY_KEY=Quantity
+
 PRODUCT_NUMBER_KEY=Pack UPC
+
 PRODUCT_NUMBER_KEY2=
+
 CASE_UPC_KEY=Case UPC
+
 GL_CODE_KEY=GL Code
+
 SUPPLIER_ITEM_NUMBER=Product Number
+
 RETAILER_NAME=unknown
+
 UNITS_PER_PACK=
+
 STORE_NUMBER_KEY=Retailer Store Number
+
 UNIT_OF_MEASURE=
+
 DISCOUNT_ADJUSTMENT_TOTAL=
 
 Adjust them to match your CSV columns, store number, etc.
