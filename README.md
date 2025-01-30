@@ -37,20 +37,29 @@ or use any name your file has.
 Environment Variables
 Create a .env file in the project root (same folder as index.js) with the following variables:
 # FTP SETTINGS
+
 FTP_HOST=ftp.yourserver.com
+
 FTP_USER=yourFtpUsername
+
 FTP_PASSWORD=yourFtpPassword
 
 # KORONA API SETTINGS
+
 CLUSTER=yourKoronaCluster
+
 API_KEY=yourAccountID
+
 USERNAME=yourKoronaUsername
+
 PASSWORD=yourKoronaPassword
 
 # ORGANIZATIONAL UNIT MATCH (Store Number)
+
 ORG_UNIT_TO_MATCH=3
 
 # (Optional) CSV Column Overrides
+
 VENDOR_NAME_KEY=Vendor Name
 
 PRODUCT_DESCRIPTION_KEY=Product Description
