@@ -1,5 +1,5 @@
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃           KORONA FTP CSV SYNC PROJECT               ┃
+┃   KORONA FTP CSV SYNC PROJECT          ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 A simple Node.js project to:
