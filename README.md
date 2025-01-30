@@ -16,7 +16,6 @@ A simple Node.js project to:
 1. [Project Setup](#project-setup)
 2. [Environment Variables](#environment-variables)
 3. [Usage](#usage)
-4. [Full Source Code](#full-source-code)
 
 <br/>
 
